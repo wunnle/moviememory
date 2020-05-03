@@ -1,0 +1,15 @@
+.signupform{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px, solid, #dedede
+
+}
+.signupform label {
+    display: flex;
+    flex-direction: column;
+}
+
+.signupform label + label {
+    margin-top: 20px;
+}
