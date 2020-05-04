@@ -1,6 +1,5 @@
 const defaultState = {
-    userName:'Berk',
-    age: 25,
+    userEmail:null,
     isUserLoggedIn: false
 }
 
@@ -10,12 +9,9 @@ const login = (state = defaultState, action) => {
         case 'USER_LOGGED_IN':
             return {
                 ...state,
-                userName:action.payload.userName,
+                userEmail:action.payload.userEmail,
                 isUserLoggedIn: true
             }
-
-
-
 
         default:
             return state

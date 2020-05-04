@@ -1,0 +1,15 @@
+.justwatched{
+    width: 1200px;
+    margin: auto;  
+}
+
+.areaholder{
+        background: white;
+        border-radius: 18px;
+        margin-top: 20px;
+        display: flex;
+        height: 800px;
+        padding: 40px;
+        box-sizing: border-box;
+       
+}

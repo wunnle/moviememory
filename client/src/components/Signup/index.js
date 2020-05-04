@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Signup.module.css'
 import { postData } from '../../utils/helpers'
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -19,7 +20,7 @@ async function handleCreateUser(email,password){
     setLoading(false)
   
        if(data.isSuccess) {
-    // show new user added message
+      return <Redirect to = "/signup"/>
   } else {
     // show error
   }

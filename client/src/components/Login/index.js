@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {userLoggedIn} from '../../redux/actions/login'
+import { userLoggedIn } from '../../redux/actions/login'
 import styles from './Login.module.css'
 import { Redirect } from 'react-router-dom'
 import { postData } from '../../utils/helpers'
@@ -12,12 +12,13 @@ import LoginErrorBar from '../LoginForm/LoginErrorBar'
 
 const Login = () => {
 
-    const dispatch = useDispatch
+    const dispatch = useDispatch()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     
     const isUserLoggedIn = useSelector((s)=>s.login.isUserLoggedIn)
+    
     const [isLoading, setLoading] = useState(false)
     const [isErred, setErred] = useState(false)
 
@@ -33,20 +34,20 @@ const Login = () => {
           email, password
         })
 
-        setLoading(false)
+       setLoading(false)
 
        if(data.error){
            setErred(true)
        }
 
-       if(data.token){
+       if(data.isSuccess){
         dispatch(userLoggedIn(email))
        }
        
     }
 
     if(isUserLoggedIn) {
-        return <Redirect to = '/' />
+        return ( <Redirect to = '/mycollection'/>)
     
       }
 
