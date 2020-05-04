@@ -5,9 +5,9 @@ const SearchBar = () => {
 
 const [searchValue,setSearchValue] =  useState('')
 
-async function handleSubmitSearch(searchValue) {
-    
-    const res = await fetch(
+async function handleSubmitSearch(e) {
+    e.preventDefault()
+        const res = await fetch(
         `https://www.omdbapi.com/?s=${searchValue}&apikey=fdc90b38`
     );
   
@@ -16,8 +16,6 @@ async function handleSubmitSearch(searchValue) {
    
   }
   
-  handleSubmitSearch();
-
 return (
 
 <form className={styles.input}>
@@ -28,10 +26,8 @@ onChange={(e)=>setSearchValue(e.target.value)}
 type ="text"
 />
 
-<button 
-onClick={handleSubmitSearch} 
-type="submit"
-/> 
+<button onClick={handleSubmitSearch}>Click</button>
+
 </form>
 )
 }
